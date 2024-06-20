@@ -1,12 +1,19 @@
-import React from 'react';
+// src/pages/Gallery.js
 
-function GalleryPage() {
-    return (
-        <div>
-            <h1>Gallery</h1>
-            <p>Before and after photos of our work.</p>
-        </div>
-    );
+import React from 'react';
+import SEO from '../components/SEO';
+
+function Gallery() {
+  return (
+    <div>
+      <SEO title="Gallery - Clinton Plumbing & Heating" description="View my gallery of past plumbing projects and works." />
+      <h1>Our Work</h1>
+      <div className="gallery">
+        <img src="path/to/before1.jpg" alt="Before repair" />
+        <img src="path/to/after1.jpg" alt="After repair" />
+      </div>
+    </div>
+  );
 }
 
-export default GalleryPage;
+export default Gallery;

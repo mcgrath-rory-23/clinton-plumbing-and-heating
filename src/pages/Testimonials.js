@@ -1,12 +1,17 @@
-import React from 'react';
+// src/pages/Testimonials.js
 
-function TestimonialsPage() {
-    return (
-        <div>
-            <h1>Testimonials</h1>
-            <p>"Great service and very professional!" - Jane Doe</p>
-        </div>
-    );
+import React from 'react';
+import SEO from '../components/SEO';
+
+function Testimonials() {
+  return (
+    <div>
+      <SEO title="Testimonials - Clinton Plumbing & Heating" description="Read what my customers have to say about Clinton Plumbing & Heating." />
+      <h1>Customer Testimonials</h1>
+      <p>"Great service! Highly recommend." - Jane Doe</p>
+      <p>"Fixed my leak quickly and professionally." - John Smith</p>
+    </div>
+  );
 }
 
-export default TestimonialsPage;
+export default Testimonials;

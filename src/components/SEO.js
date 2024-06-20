@@ -1,12 +1,15 @@
+// src/components/SEO.js
+
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-function SEO({ title }) {
-    return (
-        <Helmet>
-            <title>{title}</title>
-        </Helmet>
-    );
-}
+const SEO = ({ title, description }) => {
+  return (
+    <Helmet>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+    </Helmet>
+  );
+};
 
 export default SEO;
