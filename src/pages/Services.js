@@ -1,21 +1,21 @@
-// src/pages/Services.js
-
 import React from 'react';
 import SEO from '../components/SEO';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import ServiceList from '../components/ServiceList';
 
-function Services() {
+const Services = () => {
   return (
     <div>
-      <SEO title="Services - Clinton Plumbing & Heating" description="Explore the range of services offered by Clinton Plumbing & Heating." />
-      <h1>Our Services</h1>
-      <ul>
-        <li>Leak repairs</li>
-        <li>Pipe installation</li>
-        <li>Water heater maintenance</li>
-        <li>Bathroom and kitchen plumbing</li>
-      </ul>
+      <SEO title="Services - Clinton Plumbing & Heating" description="Explore the wide range of plumbing services offered by Clinton Plumbing & Heating." />
+      <Header />
+      <main>
+        <h1>My Services</h1>
+        <ServiceList />
+      </main>
+      <Footer />
     </div>
   );
-}
+};
 
 export default Services;
