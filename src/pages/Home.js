@@ -16,10 +16,10 @@ const Home = () => {
         </section>
         <section className="about">
           <h2>About Me</h2>
-          <p>I am a certified plumber with over 15 years of experience in providing top-notch plumbing services.</p>
+          <p>I am a certified plumber with over 40 years of experience in providing top-notch plumbing services in the Belfast area.</p>
         </section>
         <section className="services-overview">
-          <h2>Our Services</h2>
+          <h2>My Services</h2>
           <p>I offer a wide range of plumbing services, including repairs, installations, and maintenance.</p>
         </section>
       </main>
