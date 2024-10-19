@@ -1,44 +1,83 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Toggle burger menu
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // Handle scroll to add background color to navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
       <div className="container">
         <div className="row">
           <h1 className="logo">
-            <NavLink to="/" exact>
+            <NavLink to="/">
               Clinton Plumbing & Heating
             </NavLink>
           </h1>
-          <ul className="navbar-links">
+          <ul className={`navbar-links ${isOpen ? 'open' : ''}`}>
             <li>
-              <NavLink to="/" exact activeClassName="active">
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? 'active' : '')}
+              >
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink to="/services" activeClassName="active">
+              <NavLink
+                to="/services"
+                className={({ isActive }) => (isActive ? 'active' : '')}
+              >
                 Services
               </NavLink>
             </li>
             <li>
-              <NavLink to="/gallery" activeClassName="active">
+              <NavLink
+                to="/gallery"
+                className={({ isActive }) => (isActive ? 'active' : '')}
+              >
                 Gallery
               </NavLink>
             </li>
             <li>
-              <NavLink to="/testimonials" activeClassName="active">
+              <NavLink
+                to="/testimonials"
+                className={({ isActive }) => (isActive ? 'active' : '')}
+              >
                 Testimonials
               </NavLink>
             </li>
             <li>
-              <NavLink to="/contact" activeClassName="active">
+              <NavLink
+                to="/contact"
+                className={({ isActive }) => (isActive ? 'active' : '')}
+              >
                 Contact
               </NavLink>
             </li>
           </ul>
-          <div className="button">
+          <div className="button" onClick={toggleMenu}>
             <div className="burger"></div>
             <div className="burger"></div>
             <div className="burger"></div>

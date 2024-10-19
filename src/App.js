@@ -1,15 +1,20 @@
-import React from 'react';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import AppRouter from './AppRouter';
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import AppRouter from "./AppRouter";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <AppRouter />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Header />
+        <AppRouter />
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
